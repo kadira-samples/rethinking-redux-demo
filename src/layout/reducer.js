@@ -9,5 +9,6 @@ export default function(state = defaultState, action) {
   if(action.name === 'singlePost') {
     newState.postId = action.params.postId;
   }
+  
   return newState;
 };

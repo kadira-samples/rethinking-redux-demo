@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import {go} from '../routes';
 import { load } from './actions';
 
-const SinglePost = ({singlePost, postId}) => (
+import PostList from '../post_list/view';
+
+const PostContent = ({singlePost}) => (
   <div>
     <h3>{singlePost.title}</h3>
     <p>
@@ -13,10 +15,31 @@ const SinglePost = ({singlePost, postId}) => (
   </div>
 );
 
+const SinglePost = ({singlePost, postId}) => (
+  <div>
+    {singlePost? <PostContent singlePost={singlePost}/> : "Loading..."}
+    <br />
+    <PostList />
+  </div>
+);
+
 class DataComponent extends React.Component {
-  componentDidMount() {
-    const {postId, load} = this.props;
-    load(postId);
+  runLoad(props) {
+    const {postId, load} = props;
+    if(this.postId !== postId) {
+      this.postId = postId;
+      setTimeout(() => {
+        load(postId);
+      })
+    }
+  }
+
+  componentWillMount() {
+    this.runLoad(this.props);
+  }
+
+  componentWillReceiveProps(props) {
+    this.runLoad(props);
   }
 
   render() {
