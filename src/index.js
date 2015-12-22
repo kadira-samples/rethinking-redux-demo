@@ -4,13 +4,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import Layout from './layout/view';
+import Layout from './modules/layout/view';
 import rootReducer from './reducer';
-import {defineRoute} from './routes';
+import { configureRoutes } from './routes';
 
 const store = applyMiddleware(thunk)(createStore)(rootReducer);
-defineRoute(store, 'postList', '/');
-defineRoute(store, 'singlePost', '/post/:postId');
+configureRoutes(store);
 
 const render = () => {
   ReactDOM.render((

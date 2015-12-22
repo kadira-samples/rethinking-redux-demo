@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {go} from '../routes';
+import { register } from '../../lib/router';
 
 import PostList from '../post_list/view';
 import SinglePost from '../single_post/view';
@@ -8,7 +8,7 @@ import SinglePost from '../single_post/view';
 const Layout = ({layout}) => (
   <div>
     <header>
-      <h1 onClick={go('/')}>My Blog</h1>
+      <h1 onClick={register('/')}>My Blog</h1>
     </header>
     <hr />
     <div>
