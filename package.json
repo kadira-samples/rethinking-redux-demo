@@ -1,32 +1,21 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "rethinking-redux-demo",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Demo App with some new patterns arounds Redux",
   "scripts": {
     "start": "node index.js",
     "lint": "eslint src"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/kadira-samples/rethinking-redux-demo.git"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
-  ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Arunoda Susiripala <hello@kadira.io> (http://github.com/arunoda)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/arunoda/rethinking-redux-demo/issues"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/arunoda/rethinking-redux-demo",
   "devDependencies": {
     "babel-core": "6.x.x",
     "babel-eslint": "4.x.x",
