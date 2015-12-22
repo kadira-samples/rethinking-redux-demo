@@ -12,7 +12,7 @@ const PostContent = ({singlePost}) => (
     <p>
       {singlePost.content}
     </p>
-    <a href="#" onClick={register('/')}>Back</a>
+    <a href='/'>Back</a>
   </div>
 );
 

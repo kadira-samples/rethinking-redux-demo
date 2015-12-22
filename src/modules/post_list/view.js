@@ -8,7 +8,7 @@ let PostList = ({postList}) => (
   <ul>
     {postList.map(post => (
       <li key={post._id}>
-        <a href="#" onClick={register(`/post/${post._id}`)}>{post.title}</a>
+        <a href={`/post/${post._id}`}>{post.title}</a>
       </li>
     ))}
   </ul>
