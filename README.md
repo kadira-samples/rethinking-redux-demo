@@ -1,6 +1,6 @@
-# Rethinking Redux: Sample App
+# Rethinking Redux: Demo App
 
-This is a sample app written with the some new thinking to Redux with some utility tools.
+Demo App with some new patterns around Redux.
 
 ### Start the app
 

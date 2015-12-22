@@ -1,7 +1,7 @@
 {
   "name": "rethinking-redux-demo",
   "version": "1.0.0",
-  "description": "Demo App with some new patterns arounds Redux",
+  "description": "Demo App with some new patterns around Redux",
   "scripts": {
     "start": "node index.js",
     "lint": "eslint src"
