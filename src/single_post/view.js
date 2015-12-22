@@ -28,9 +28,7 @@ class DataComponent extends React.Component {
     const {postId, load} = props;
     if(this.postId !== postId) {
       this.postId = postId;
-      setTimeout(() => {
-        load(postId);
-      })
+      load(postId);
     }
   }
 
