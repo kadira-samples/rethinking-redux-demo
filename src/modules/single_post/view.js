@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { register } from '../../lib/router';
 import { loadData } from '../../lib/utils';
 import { load } from './actions';
+import { Link } from 'react-router';
 
 import PostList from '../post_list/view';
 
@@ -12,7 +12,7 @@ const PostContent = ({singlePost}) => (
     <p>
       {singlePost.content}
     </p>
-    <a href='/'>Back</a>
+    <Link to='/'>Back</Link>
   </div>
 );
 
@@ -25,8 +25,8 @@ let SinglePost = ({singlePost, postId}) => (
 );
 
 SinglePost = loadData({
-  watch: ['postId'],
-  run: ({load, postId}) => load(postId)
+  watch: ['params'],
+  run: ({load, params}) => load(params.postId)
 })(SinglePost);
 
 export default connect(

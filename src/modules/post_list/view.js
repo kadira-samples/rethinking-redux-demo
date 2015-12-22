@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { register } from '../../lib/router';
 import { loadData } from '../../lib/utils';
 import { load } from './actions';
+import { Link } from 'react-router';
 
 let PostList = ({postList}) => (
   <ul>
     {postList.map(post => (
       <li key={post._id}>
-        <a href={`/post/${post._id}`}>{post.title}</a>
+        <Link to={`/post/${post._id}`}>{post.title}</Link>
       </li>
     ))}
   </ul>

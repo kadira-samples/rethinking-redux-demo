@@ -1,19 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { register } from '../../lib/router';
 
 import PostList from '../post_list/view';
 import SinglePost from '../single_post/view';
 
-const Layout = ({layout}) => (
+const Layout = ({children}) => (
   <div>
     <header>
-      <h1 onClick={register('/')}>My Blog</h1>
+      <h1>My Blog</h1>
     </header>
     <hr />
     <div>
-      {layout.content === "singlePost"? <SinglePost postId={layout.postId}/> : null}
-      {layout.content === "postList"? <PostList /> : null}
+      {children}
     </div>
     <hr />
     <footer>
@@ -26,6 +24,4 @@ const Layout = ({layout}) => (
   </div>
 );
 
-export default connect(
-  ({layout}) => ({layout})
-)(Layout);
+export default Layout;

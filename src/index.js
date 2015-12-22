@@ -4,11 +4,16 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { configureRoutes } from './routes';
+import { Router, Route, IndexRoute } from 'react-router'
+import { createHistory } from 'history'
+import { syncReduxAndRouter } from 'redux-simple-router'
+
 import rootReducer from './reducer';
 // This is the Layout of our app, which render it based
 // on the route actions
 import Layout from './modules/layout/view';
+import PostList from './modules/post_list/view';
+import SinglePost from './modules/single_post/view';
 
 // Apply middlewares and add support for dev tools
 const finalCreateStore = compose(
@@ -18,15 +23,20 @@ const finalCreateStore = compose(
 
 // create the store
 const store = finalCreateStore(rootReducer);
+const history = createHistory();
 
-// configure routes
-configureRoutes(store);
+syncReduxAndRouter(history, store);
 
 // Render the the layout
 const render = () => {
   ReactDOM.render((
     <Provider store={store}>
-      <Layout />
+      <Router history={history}>
+        <Route component={Layout} path="/">
+          <IndexRoute component={PostList} />
+          <Router path="post/:postId" component={SinglePost} />
+        </Route>
+      </Router>
     </Provider>
   ), document.getElementById('root'));
 };
