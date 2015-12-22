@@ -5,9 +5,13 @@ export default function(state = defaultState, action) {
   }
 
   const newState = Object.assign({}, state);
-  newState.content = action.name;
-  if(action.name === 'singlePost') {
-    newState.postId = action.params.postId;
+  switch(action.name) {
+    case 'singlePost':
+      newState.content = action.name;
+      newState.postId = action.params.postId;
+      break;
+    default:
+      newState.content = action.name;
   }
   
   return newState;
