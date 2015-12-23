@@ -11,4 +11,7 @@ const SinglePostWithData = loadData({
 
 export default connect(
   ({posts}) => ({singlePost: posts.currentPost}),
-)(SinglePostWithData);
+  (dispatch) => ({
+    load: (postId) => dispatch(loadSingle(postId))
+  })
+)(SinglePost);

@@ -1,6 +1,7 @@
 import React from 'react';
-import PostList from '../post_titles/container';
 import { Link } from 'react-router';
+import PostList from '../post_titles/container';
+import Comments from '../comments/container';
 
 const PostContent = ({singlePost}) => (
   <div>
@@ -8,18 +9,28 @@ const PostContent = ({singlePost}) => (
     <p>
       {singlePost.content}
     </p>
+    <Comments postId={singlePost._id}/>
   </div>
 );
 
-let SinglePost = ({singlePost, postId}) => (
-  <div>
-    <div>
-      {singlePost? <PostContent singlePost={singlePost}/> : "Loading..."}
-    </div>
-    <Link to={'/'}>Back</Link>
-    <br />
-    <PostList />
-  </div>
-);
+class SinglePost extends React.Component {
+  componentDidMount() {
+    const {load, params} = this.props;
+    load(params.postId);
+  }
+
+  render() {
+    const {singlePost} = this.props;
+    return (
+      <div>
+        <div>
+          {singlePost? <PostContent singlePost={singlePost}/> : "Loading..."}
+        </div>
+        <Link to={'/'}>Back</Link>
+        <br />
+      </div>
+    );
+  }
+}
 
 export default SinglePost;

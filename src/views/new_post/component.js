@@ -8,7 +8,6 @@ class NewPost extends React.Component {
       <div>
         <h3>Add a New Post</h3>
         {postAdding? "Adding..." : this.renderButton() }
-        
       </div>
     );
   }
