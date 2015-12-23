@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import App from './views/app/container';
 import PostTitles from './views/post_titles/container';
 import SinglePost from './views/single_post/container';
+import NewPost from './views/new_post/container';
 
 export const createRoutes = (history) => {
   return () => (
@@ -11,6 +12,7 @@ export const createRoutes = (history) => {
       <Route component={App} path="/">
         <IndexRoute component={PostTitles} />
         <Router path="post/:postId" component={SinglePost} />
+        <Router path="newpost" component={NewPost} />
       </Route>
     </Router>
   );

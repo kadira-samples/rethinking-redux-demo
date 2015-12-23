@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Layout = ({children}) => (
   <div>
     <header>
       <h1>My Blog</h1>
+      <Link to='/'>Home</Link> |
+      <Link to='/newpost'> New Post</Link> 
     </header>
     <hr />
     <div>

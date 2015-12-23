@@ -8,13 +8,15 @@ const PostContent = ({singlePost}) => (
     <p>
       {singlePost.content}
     </p>
-    <Link to='/'>Back</Link>
   </div>
 );
 
 let SinglePost = ({singlePost, postId}) => (
   <div>
-    {singlePost? <PostContent singlePost={singlePost}/> : "Loading..."}
+    <div>
+      {singlePost? <PostContent singlePost={singlePost}/> : "Loading..."}
+    </div>
+    <Link to={'/'}>Back</Link>
     <br />
     <PostList />
   </div>
