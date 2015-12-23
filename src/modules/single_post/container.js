@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { loadData } from '../../lib/utils';
-import { load } from './actions';
+import { load } from './duck';
 
 import SinglePost from './component';
 
