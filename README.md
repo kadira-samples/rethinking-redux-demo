@@ -1,6 +1,6 @@
 # Rethinking Redux: Demo App
 
-> Checkout the [React Router](https://github.com/kadira-samples/rethinking-redux-demo/tree/react-router-version) version.
+## Update: This version use ReactRouter & simple-redux-router for routing.
 
 Demo App with some new patterns around Redux.
 
