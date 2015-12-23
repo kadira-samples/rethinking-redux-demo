@@ -1,5 +1,5 @@
 import React from 'react';
-import PostList from '../post_list/container';
+import PostList from '../post_titles/container';
 import { Link } from 'react-router';
 
 const PostContent = ({singlePost}) => (

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-let PostList = ({postList}) => (
+let PostList = ({postTitles}) => (
   <ul>
-    {postList.map(post => (
+    {postTitles.map(post => (
       <li key={post._id}>
         <Link to={`/post/${post._id}`}>{post.title}</Link>
       </li>
