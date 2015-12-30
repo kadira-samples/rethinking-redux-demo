@@ -31,5 +31,4 @@ const render = () => {
   ), document.getElementById('root'));
 };
 
-store.subscribe(render);
 render();
